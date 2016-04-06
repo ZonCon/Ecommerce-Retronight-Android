@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tileMode="repeat"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextureView
+        android:id="@+id/video_ghana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" />
+
+    <TextView
+        android:id="@+id/tv_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="15dp"
+        android:background="#66000000"
+        android:padding="15dp"
+        android:textColor="@color/white"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_dialog"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="20dp"
+        android:background="#ff444444"
+        android:orientation="vertical"
+        android:padding="15dp" >
+
+        <TextView
+            android:id="@+id/tv_dialog_label"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text=""
+            android:textColor="@color/white" />
+
+        <Spinner
+            android:id="@+id/spin_dialog"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/tv_dialog_but"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text=""
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_partitionC"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/ll_partitionLeft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:background="#88000000" >
+
+            <LinearLayout
+                android:id="@+id/ll_partitionRight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:background="@color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MENU"
+                    android:padding="20dp"
+                    android:textColor="@color/white" />
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <TextView 
+                    android:id="@+id/tv_preferences"
+                    android:background="@color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="PREFERENCES"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    />
+                
+                <LinearLayout
+                    android:id="@+id/ll_preference_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+                
+                <TextView 
+                    android:id="@+id/tv_more"
+                    android:background="@color/black"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MORE"
+                    android:padding="20dp"
+                    android:textColor="@color/white"
+                    />
+                
+                <LinearLayout
+                    android:id="@+id/ll_more_container"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

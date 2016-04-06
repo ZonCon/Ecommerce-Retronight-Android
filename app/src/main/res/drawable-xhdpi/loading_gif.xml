@@ -1,0 +1,12 @@
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+    <item android:drawable="@drawable/l_0" android:duration="200" />
+    <item android:drawable="@drawable/l_1" android:duration="200" />
+    <item android:drawable="@drawable/l_2" android:duration="200" />
+    <item android:drawable="@drawable/l_3" android:duration="200" />
+    <item android:drawable="@drawable/l_4" android:duration="200" />
+    <item android:drawable="@drawable/l_5" android:duration="200" />
+    <item android:drawable="@drawable/l_6" android:duration="200" />
+    <item android:drawable="@drawable/l_7" android:duration="200" />
+     
+</animation-list>

@@ -1,0 +1,181 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_verydark"
+    android:orientation="vertical"
+    android:tileMode="repeat"
+    tools:context="${relativePackage}.${activityClass}">
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/tv_label_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="SIGN IN"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_label_info"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Your email address is already registered on the ZonCon App Management System. If you don't remember the password, please follow the 'Forgot Password' button."
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_label_email"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Email"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/shadow_background"
+                android:hint=""
+                android:inputType="textEmailAddress"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_label_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Password"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/shadow_background"
+                android:inputType="textPassword"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/tv_label_confirm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:shadowColor="@color/black"
+                android:shadowDx="1"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Confirm"
+                android:textColor="@color/white"
+                android:visibility="gone"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_confirm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/shadow_background"
+                android:inputType="textPassword"
+                android:padding="5dp"
+                android:text=""
+                android:textColor="@color/black"
+                android:visibility="gone"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/but_next"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/green_but_background"
+                android:text="SIGN IN"
+                android:visibility="gone"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/but_forgot"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/green_but_background"
+                android:text="FORGOT PASSWORD"
+                android:visibility="gone"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/but_back"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="@drawable/green_but_background"
+                android:text="BACK TO SHIPPING"
+                android:visibility="gone"
+                android:textSize="17sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

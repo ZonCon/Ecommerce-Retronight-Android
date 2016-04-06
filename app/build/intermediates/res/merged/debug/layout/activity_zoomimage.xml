@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context=".MainActivity" >
+
+    <com.megotechnologies.ecommerce_retronight.TouchImageView
+        
+        android:id="@+id/zoomImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/mego_logo" 
+        
+        />
+
+    <TextView 
+        
+        android:id="@+id/butSave"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="5dp"
+        android:text="SAVE"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:gravity="right"
+        
+        />
+    
+    <TextView 
+        
+        android:id="@+id/butShare"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:padding="5dp"
+        android:text="SHARE"
+        android:textColor="#fff"
+        android:textSize="18sp"
+        android:gravity="right"
+        
+        />
+
+</RelativeLayout>

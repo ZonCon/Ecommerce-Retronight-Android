@@ -1,0 +1,114 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:tileMode="repeat"
+    android:background="@color/gray_verydark"
+    tools:context="${relativePackage}.${activityClass}" >
+    
+     <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg" />
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true" >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:id="@+id/rl_head"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/tv_label_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:gravity="center"
+                    android:text="VERIFY ORDER DETAILS"
+                    android:textColor="@color/text_color"
+                    android:textSize="20sp" />
+                
+            </RelativeLayout>
+            
+            <LinearLayout
+                android:id="@+id/ll_crumbs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="15dp" >
+
+                <TextView
+                    android:id="@+id/tv_crumbs_cart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Cart"
+                    android:textSize="12dp"
+                    android:textColor="@color/light_gray"
+                    android:background="#66000000" />
+                
+                <TextView
+                    android:id="@+id/tv_crumbs_checkout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Checkout"
+                    android:textSize="12dp"
+                    android:textColor="@color/light_gray"
+                    android:background="#66000000" />
+                
+                <TextView
+                    android:id="@+id/tv_crumbs_confirm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Confirm"
+                    android:textSize="12dp"
+                    android:textColor="@color/white"
+                    android:background="@color/color_green" />
+                
+                <TextView
+                    android:id="@+id/tv_crumbs_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="15dp"
+                    android:text="Payment"
+                    android:textSize="12dp"
+                    android:textColor="@color/light_gray"
+                    android:background="#66000000" />
+            </LinearLayout>
+            
+            <TextView
+                android:id="@+id/tv_label_subtitle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:gravity="center"
+                android:text="You can go back and modify if required..."
+                android:textColor="@color/text_color"
+                android:textSize="14sp" />
+           
+           <LinearLayout
+                android:id="@+id/ll_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

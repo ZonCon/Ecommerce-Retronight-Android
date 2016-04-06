@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<lint>
+    <issue id="NewApi" severity="ignore">
+        <ignore path="src/com/megotechnologies/zoncon/FragmentDesigns.java" />
+        <ignore path="src/com/megotechnologies/zoncon/MainActivity.java" />
+    </issue>
+</lint>

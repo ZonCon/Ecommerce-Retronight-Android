@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gray_verydark"
+    android:tileMode="repeat"
+    tools:context="${relativePackage}.${activityClass}" >
+
+     <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:scaleType="fitXY"
+        android:src="@drawable/bg" />
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_label_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:gravity="center"
+                android:text="CREATE ACCOUNT"
+                android:textColor="@color/text_color"
+                android:textSize="20sp" />
+                        
+            <TextView
+                android:id="@+id/tv_label_email"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:text="Email"
+                android:textColor="@color/text_color"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_email"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:hint="For your ZonCon account"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                android:background="@drawable/shadow_background"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp" />
+            
+            <TextView
+                android:id="@+id/tv_label_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:text="Choose Password"
+                android:textColor="@color/text_color"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:background="@drawable/shadow_background"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp" />
+            
+            <TextView
+                android:id="@+id/tv_label_repassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingTop="15dp"
+                android:text="Confirm Password"
+                android:textColor="@color/text_color"
+                android:textSize="20sp" />
+
+            <EditText
+                android:id="@+id/edit_repassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:inputType="textPassword"
+                android:textColor="@color/black"
+                android:background="@drawable/shadow_background"
+                android:padding="5dp"
+                android:text=""
+                android:textSize="20sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="horizontal"
+                android:gravity="center" >
+
+                <Button
+                    android:id="@+id/but_save"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp"
+                    android:background="@drawable/green_but_background"
+                    android:text="CREATE"
+                    android:textSize="17sp" />
+                
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
