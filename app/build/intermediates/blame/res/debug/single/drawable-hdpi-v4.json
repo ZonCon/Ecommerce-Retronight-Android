@@ -296,12 +296,12 @@
         "source": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/src/main/res/drawable-hdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-hdpi/abc_ic_menu_cut_mtrl_alpha.png"
-    },
-    {
         "merged": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png",
         "source": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-hdpi/abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-hdpi/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/res/merged/debug/drawable-hdpi-v4/cast_ic_notification_on.png",

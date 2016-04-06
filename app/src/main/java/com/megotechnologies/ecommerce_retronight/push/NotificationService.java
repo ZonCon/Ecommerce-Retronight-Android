@@ -1,23 +1,5 @@
 package com.megotechnologies.ecommerce_retronight.push;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
-import org.apache.http.HttpResponse;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -34,10 +16,28 @@ import android.support.v4.app.NotificationCompat;
 
 import com.megotechnologies.ecommerce_retronight.MainActivity;
 import com.megotechnologies.ecommerce_retronight.R;
-import com.megotechnologies.ecommerce_retronight.loading.SplashActivity;
 import com.megotechnologies.ecommerce_retronight.ZonConApplication;
 import com.megotechnologies.ecommerce_retronight.db.DbConnection;
+import com.megotechnologies.ecommerce_retronight.loading.SplashActivity;
 import com.megotechnologies.ecommerce_retronight.utilities.MLog;
+
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class NotificationService extends Service {
 
@@ -65,10 +65,11 @@ public class NotificationService extends Service {
 					records =  dbC.retrieveRecords(map);
 				}
 
-				if(records.size() > 0) {
+				for(int i = 0; i < records.size(); i++) {
 
-					map = records.get(0);
+					map = records.get(i);
 					String idStream = map.get(MainActivity.DB_COL_SRV_ID);
+					String _idStream = map.get(MainActivity.DB_COL_ID);
 
 					String jsonStr = "";
 					HttpClient httpclient = new DefaultHttpClient();
@@ -106,9 +107,9 @@ public class NotificationService extends Service {
 
 						jsonStr = responseString;
 
-
 						try {
 
+							MLog.log("Res=" + jsonStr);
 							JSONObject jsonObj = new JSONObject(jsonStr);
 							if(jsonObj.getString("result").equals("success")) {
 
@@ -120,46 +121,62 @@ public class NotificationService extends Service {
 
 									String timestamp = jsonObj.getString("timestampPublish");
 									String title = jsonObj.getString("title");
+									String published = jsonObj.getString("published");
+									String idItem = jsonObj.getString("idProductitems");
 
 									map = new HashMap<String, String>();
-									map.put(MainActivity.DB_COL_TYPE, MainActivity.DB_RECORD_TYPE_NOTIF);
+									map.put(MainActivity.DB_COL_TYPE, MainActivity.DB_RECORD_TYPE_ITEM);
+									map.put(MainActivity.DB_COL_FOREIGN_KEY, _idStream);
+									map.put(MainActivity.DB_COL_ID, idItem);
 									if(dbC.isOpen()) {
 										dbC.isAvailale();
-										ArrayList<HashMap<String, String>> list = new ArrayList<HashMap<String,String>>();
-										list = dbC.retrieveRecords(map);
-										if(list.isEmpty()) {
-											map.put(MainActivity.DB_COL_SRV_ID, timestamp);
-											map.put(MainActivity.DB_COL_CART_CART_ISOPEN, "0");
-											dbC.insertRecord(map);
-											Message msg = new Message();
-											msg.obj = title;
-											notifHandler.sendMessage(msg);
-											//show notification
-										} else {
+										ArrayList<HashMap<String, String>> recordsItems = dbC.retrieveRecords(map);
 
-											if(list.size() > 1) {
+										if(recordsItems.size() == 0) {
 
-													dbC.deleteRecord(map);
+											map = new HashMap<String, String>();
+											map.put(MainActivity.DB_COL_TYPE, MainActivity.DB_RECORD_TYPE_MESSAGESTREAM_PUSH);
+											map.put(MainActivity.DB_COL_SRV_ID, idStream);
+											map.put(MainActivity.DB_COL_TITLE, idItem);
 
-											} else {
+											if(dbC.isOpen()) {
+												dbC.isAvailale();
 
-												HashMap<String, String> mapR = list.get(0);
-												String timestampExisting = mapR.get(MainActivity.DB_COL_SRV_ID);
-												MLog.log("RCVD NOTIF = " + timestamp + " CURR = " + timestampExisting);
-												if(Long.parseLong(timestampExisting) < Long.parseLong(timestamp)) {
-													mapR.put(MainActivity.DB_COL_SRV_ID, timestamp);
-													mapR.put(MainActivity.DB_COL_CART_CART_ISOPEN, "0");
-													dbC.updateRecord(mapR, map);
+												ArrayList<HashMap<String, String>> recordsNotifs = dbC.retrieveRecords(map);
+												if (recordsNotifs.size() == 0) {
+
 													Message msg = new Message();
 													msg.obj = title;
 													notifHandler.sendMessage(msg);
-													//show notification
+
+													map = new HashMap<String, String>();
+													map.put(MainActivity.DB_COL_TYPE, MainActivity.DB_RECORD_TYPE_MESSAGESTREAM_PUSH);
+													map.put(MainActivity.DB_COL_SRV_ID, idStream);
+													if(dbC.isOpen()) {
+														dbC.isAvailale();
+														dbC.deleteRecord(map);
+
+													}
+
+													map = new HashMap<String, String>();
+													map.put(MainActivity.DB_COL_TYPE, MainActivity.DB_RECORD_TYPE_MESSAGESTREAM_PUSH);
+													map.put(MainActivity.DB_COL_SRV_ID, idStream);
+													map.put(MainActivity.DB_COL_TITLE, idItem);
+
+													if(dbC.isOpen()) {
+														dbC.isAvailale();
+														dbC.insertRecord(map);
+													}
+
+												} else {
+
 												}
 
 											}
+
 										}
 									}
-									
+
 								}
 
 							}

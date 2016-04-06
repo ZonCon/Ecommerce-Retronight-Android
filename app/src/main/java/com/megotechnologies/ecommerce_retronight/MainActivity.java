@@ -51,7 +51,7 @@ import java.util.HashMap;
 
 public class MainActivity extends Activity implements ZCActivityLifecycle, ZCRunnable {
 
-	public static Boolean LOG = false;
+	public static Boolean LOG = true;
 
 	// Project
 	
@@ -133,7 +133,7 @@ public class MainActivity extends Activity implements ZCActivityLifecycle, ZCRun
 	// DB
 	
 	public static String DB_TABLE = "records";
-	public static String DB_NAME = "zoncon_ecommerce_morningmist.db";
+	public static String DB_NAME = "zoncon_ecommerce_retronight.db";
 	public static int DB_VERSION = 5;
 	
 	// DB Columns
@@ -202,6 +202,7 @@ public class MainActivity extends Activity implements ZCActivityLifecycle, ZCRun
 	public static String DB_RECORD_TYPE_COUPON = "RECORD_COUPON";
 	public static String DB_RECORD_TYPE_TAX_1 = "RECORD_TAX_1";
 	public static String DB_RECORD_TYPE_TAX_2 = "RECORD_TAX_2";
+	public static String DB_RECORD_TYPE_MESSAGESTREAM_PUSH = "MESSAGE_PUSH";
 	public static String DB_RECORD_VALUE_CART_OPEN = "yes";
 	public static String DB_RECORD_VALUE_CART_CLOSED = "no";
 	public static String DB_DISCOUNT_TYPE_FLAT = "FLAT";

@@ -16,12 +16,12 @@
         "source": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/res/merged/debug/layout/mr_media_route_chooser_dialog.xml",
-        "source": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_chooser_dialog.xml"
-    },
-    {
         "merged": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/res/merged/debug/layout/fragment_about_itemslist.xml",
         "source": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/src/main/res/layout/fragment_about_itemslist.xml"
+    },
+    {
+        "merged": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/res/merged/debug/layout/mr_media_route_chooser_dialog.xml",
+        "source": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/layout/mr_media_route_chooser_dialog.xml"
     },
     {
         "merged": "/Users/hrushim/StudioProjects/Zoncon_Ecommerce_Retronight/app/build/intermediates/res/merged/debug/layout/fragment_account_forgot_password.xml",
